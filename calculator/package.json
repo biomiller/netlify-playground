@@ -8,10 +8,21 @@
     "lambda-serve": "./node_modules/.bin/netlify-lambda serve functions",
     "lambda-build": "./node_modules/.bin/netlify-lambda build functions"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biomiller/netlify-playground.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biomiller/netlify-playground/issues"
+  },
+  "homepage": "https://github.com/biomiller/netlify-playground#readme",
   "dependencies": {
-    "netlify-lambda": "^1.6.3"
+    "express": "^4.17.1",
+    "netlify-lambda": "^1.6.3",
+    "serverless-http": "^2.3.1"
   }
 }
+
