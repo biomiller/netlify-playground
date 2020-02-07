@@ -21,7 +21,6 @@ exports.handler = function (event: { body: string; }, context: any, callback: (a
             continue
         }
         else {
-            let index: number = 0;
             let prefix: string[] = [];
             for (letter of word.split("")) {
 
@@ -33,7 +32,6 @@ exports.handler = function (event: { body: string; }, context: any, callback: (a
                     prefix.push(letter)
                     word = word.substring(1)
                 }
-                index += 1
             }
         }
     };
