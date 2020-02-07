@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run compile & npm & npm run lambda-build & npm run lambda-serve",
     "lambda-serve": "./node_modules/.bin/netlify-lambda serve functions",
-    "lambda-build": "./node_modules/.bin/netlify-lambda build functions/*.js",
-    "compile": "npx tsc -p functions_ts --outdir ./functions"
+    "lambda-build": "./node_modules/.bin/netlify-lambda build functions",
+    "compile": "npx tsc -p ./functions_ts --outdir ./functions"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,6 @@
     "express": "^4.17.1",
     "netlify-lambda": "^1.6.3",
     "serverless-http": "^2.3.1",
-    "typescript": "^3.7.5"
+    "ts.data.json": "^1.0.1"
   }
 }
