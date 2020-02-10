@@ -8,12 +8,12 @@ exports.handler = function (event, context, callback) {
     var response_string = "";
     for (var _i = 0, _a = sentence.split(" "); _i < _a.length; _i++) {
         word = _a[_i];
+        word = word.toLowerCase();
         if (vowels.includes(word.charAt(0).toLowerCase())) {
             response_string = response_string + word + "yay" + " ";
             continue;
         }
         else {
-            var index = 0;
             var prefix = [];
             for (var _b = 0, _c = word.split(""); _b < _c.length; _b++) {
                 letter = _c[_b];
@@ -25,7 +25,6 @@ exports.handler = function (event, context, callback) {
                     prefix.push(letter);
                     word = word.substring(1);
                 }
-                index += 1;
             }
         }
     }

@@ -15,6 +15,7 @@ exports.handler = function (event: { body: string; }, context: any, callback: (a
 
 
     for (word of sentence.split(" ")) {
+        word = word.toLowerCase();
 
         if (vowels.includes(word.charAt(0).toLowerCase())) {
             response_string = response_string + word + "yay" + " "
