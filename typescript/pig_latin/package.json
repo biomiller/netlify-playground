@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest-test": "jest ./*_jest.test.ts",
+    "mocha-test": "mocha -r ts-node/register tests/**/*_mocha.test.ts",
+    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
     "dev": "npm run compile & npm & npm run lambda-build & npm run lambda-serve",
     "lambda-serve": "./node_modules/.bin/netlify-lambda serve functions",
     "lambda-build": "./node_modules/.bin/netlify-lambda build functions",
-    "compile": "npx tsc -p ./functions_ts --outdir ./functions"
+    "compile": "tsc -p ./functions_ts --outdir ./functions"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,19 @@
   },
   "homepage": "https://github.com/biomiller/netlify-playground#readme",
   "dependencies": {
+    "@types/chai": "^4.2.9",
+    "@types/jest": "^25.1.2",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.1",
+    "chai": "^4.2.0",
     "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "mocha": "^7.0.1",
     "netlify-lambda": "^1.6.3",
     "serverless-http": "^2.3.1",
-    "ts.data.json": "^1.0.1"
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "ts.data.json": "^1.0.1",
+    "typescript": "^3.7.5"
   }
 }

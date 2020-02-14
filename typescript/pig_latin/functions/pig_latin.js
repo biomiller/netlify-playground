@@ -1,5 +1,6 @@
 "use strict";
-exports.handler = function (event, context, callback) {
+Object.defineProperty(exports, "__esModule", { value: true });
+function pig_latin(event, context) {
     var body = JSON.parse(event.body);
     var sentence = body.sentence;
     var vowels = ["a", "e", "i", "o", "u"];
@@ -29,8 +30,11 @@ exports.handler = function (event, context, callback) {
         }
     }
     ;
-    callback(null, {
-        statusCode: 200,
-        body: response_string
-    });
-};
+    return response_string;
+    // callback(null, {
+    //     statusCode: 200,
+    //     body: response_string
+    // });
+}
+exports.pig_latin = pig_latin;
+exports.handler = pig_latin;

@@ -1,4 +1,4 @@
-exports.handler = function (event: { body: string; }, context: any, callback: (arg0: null, arg1: { statusCode: number; body: string; }) => void) {
+export function pig_latin (event: { body: string; }, context: any, callback: any) {
 
     interface sentence {
         sentence: string;
@@ -42,3 +42,6 @@ exports.handler = function (event: { body: string; }, context: any, callback: (a
         body: response_string
     });
 }
+
+exports.handler = pig_latin;
+
